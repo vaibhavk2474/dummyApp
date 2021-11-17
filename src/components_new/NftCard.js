@@ -3,7 +3,7 @@ import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles({
   NFTCardPreview: {
-      zIndex:"5",
+    zIndex: "5",
     // border: "1px solid green",
     position: "absolute",
     width: "289.27px",
@@ -84,8 +84,8 @@ const useStyles = makeStyles({
     position: "absolute",
     // left: "14.72%",
     // top: "16.95%",
-    height:"380px",
-    width:"290px",
+    height: "380px",
+    width: "290px",
   },
   NFTInnerCardRectangle: {
     position: "absolute",
@@ -108,7 +108,7 @@ const useStyles = makeStyles({
     // left: "-2px",
     top: "291px",
   },
-  NFTInnerCardRectangleContent:{
+  NFTInnerCardRectangleContent: {
     position: "absolute",
     width: "200px",
     height: "41.72px",
@@ -116,46 +116,46 @@ const useStyles = makeStyles({
     top: "20px",
     // border:"1px solid red",
   },
-  NFTInnerCardRectangleText:{
+  NFTInnerCardRectangleText: {
     // width: "81px",
     // height: "14px",
     position: "absolute",
     top: "25px",
-    left:"55px",
+    left: "55px",
     fontFamily: "Tomica",
     fontStyle: "normal",
     fontWeight: "bold",
     fontSize: "20px",
     lineHeight: "124.5%",
-    display:"flex",
-    alignItems:"center",
-letterSpacing:"0.0653em",
+    display: "flex",
+    alignItems: "center",
+    letterSpacing: "0.0653em",
     color: "#5E6282",
   },
-  NftRectangleContent:{
+  NftRectangleContent: {
     //   border:"1px solid red",
-      width:"201.46px",
-      height:"205.57px",
+    width: "201.46px",
+    height: "205.57px",
     position: "absolute",
     top: "81px",
-    left:"20px",
+    left: "20px",
     fontFamily: "Tomica",
     fontStyle: "normal",
     fontWeight: "bolder",
     fontSize: "13px",
     lineHeight: "124.5%",
-    display:"flex",
-    flexDirection:"column",
-    flexWrap:"nowrap",
-    alignItems:"center",
-    textAlign:"center",
+    display: "flex",
+    flexDirection: "column",
+    flexWrap: "nowrap",
+    alignItems: "center",
+    textAlign: "center",
     color: "#000000",
-    justifyContent:"space-evenly"
-  }
+    justifyContent: "space-evenly",
+  },
 });
 
 export default function NftCard(props) {
-    console.log(props.AccessTicketsInfo);
+  console.log(props.AccessTicketsInfo);
   const classes = useStyles();
 
   return (
@@ -165,9 +165,11 @@ export default function NftCard(props) {
           <div className={classes.NFTInnerCard}>
             <div className={classes.NFTInnerCardmembership}>
               <div className={classes.NFTInnerCardRectangle}>
-                  <div className={classes.NFTInnerCardRectangleContent}></div>
+                <div className={classes.NFTInnerCardRectangleContent}></div>
 
-                   <div className={classes.NFTInnerCardRectangleText}>{props.AccessTicketsInfo.CardContent}</div>
+                <div className={classes.NFTInnerCardRectangleText}>
+                  {props.AccessTicketsInfo.CardContent}
+                </div>
               </div>
             </div>
           </div>
@@ -175,17 +177,11 @@ export default function NftCard(props) {
       </div>
 
       <div className={classes.NftRectangle}>
-          <div className={classes.NftRectangleContent}>
-          {
-              props.AccessTicketsInfo.RectangleContent.map((e)=>{
-                  return (
-
-                    <div> {e}</div>
-
-                  )
-              })
-          }
-</div>
+        <div className={classes.NftRectangleContent}>
+          {props.AccessTicketsInfo.RectangleContent.map((e) => {
+            return <div> {e}</div>;
+          })}
+        </div>
       </div>
 
       <div className={classes.BftButton}>
